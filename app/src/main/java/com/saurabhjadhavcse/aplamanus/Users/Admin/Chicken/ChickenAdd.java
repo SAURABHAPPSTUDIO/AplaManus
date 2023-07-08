@@ -1,0 +1,154 @@
+package com.saurabhjadhavcse.aplamanus.Users.Admin.Chicken;
+
+import android.content.ContentResolver;
+import android.content.Intent;
+import android.net.Uri;
+import android.os.Bundle;
+import android.view.View;
+import android.webkit.MimeTypeMap;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.ProgressBar;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.OnProgressListener;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
+import com.saurabhjadhavcse.aplamanus.R;
+import com.saurabhjadhavcse.aplamanus.Users.Admin.Models.ChickenModel;
+
+public class ChickenAdd extends AppCompatActivity {
+
+    private Button uploadBtn;
+
+    private ImageView imageView;
+
+    EditText itemNameEditTxt, itemPriceEditTxt, hotelLocationEditTxt;
+
+    String itemNameEditTxtToString, itemPriceEditTxtToString;
+
+    private ProgressBar progressBar;
+
+    private final DatabaseReference root = FirebaseDatabase.getInstance().getReference("Chicken");
+
+    private final StorageReference reference = FirebaseStorage.getInstance().getReference();
+
+    Uri imageUri;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_chicken_add);
+
+        imageView = findViewById(R.id.AddItemImg);
+        itemNameEditTxt = findViewById(R.id.AddItemNamEditeTxt);
+        itemPriceEditTxt = findViewById(R.id.AddItemPriceEditTxt);
+        uploadBtn = findViewById(R.id.uploadItem);
+        progressBar = findViewById(R.id.progressbar);
+
+        progressBar.setVisibility(View.INVISIBLE);
+
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent galleryIntent = new Intent();
+                galleryIntent.setAction(Intent.ACTION_GET_CONTENT);
+                galleryIntent.setType("image/*");
+                startActivityForResult(galleryIntent, 2);
+            }
+        });
+
+        uploadBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (itemNameEditTxt.getText().toString().isEmpty()) {
+                    itemNameEditTxt.setError("Enter Name");
+                } else if (itemPriceEditTxt.getText().toString().isEmpty()) {
+                    itemPriceEditTxt.setError("Enter Price");
+                } else if (!isNumeric(itemPriceEditTxt.getText().toString())) {
+                    itemPriceEditTxt.setError("Enter a valid price");
+                } else if (imageUri != null) {
+                    uploadToFirebase(imageUri);
+                } else {
+                    Toast.makeText(ChickenAdd.this, "Please Select Image", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+
+    }
+
+    private boolean isNumeric(String value) {
+        try {
+            Double.parseDouble(value);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
+
+
+    private void uploadToFirebase(Uri imageUri) {
+        final StorageReference fileRef = reference.child("Chicken/" + System.currentTimeMillis() + "." + getFileExtension(imageUri));
+        fileRef.putFile(imageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onSuccess(UploadTask.TaskSnapshot snapshot) {
+                fileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                    @Override
+                    public void onSuccess(Uri uri) {
+
+                        itemNameEditTxtToString = itemNameEditTxt.getText().toString().trim();
+                        itemPriceEditTxtToString = itemPriceEditTxt.getText().toString().trim();
+
+                        String modelId = root.push().getKey();
+                        ChickenModel model = new ChickenModel(modelId,uri.toString(), itemNameEditTxtToString, itemPriceEditTxtToString);
+                        root.child(modelId).setValue(model);
+
+                        progressBar.setVisibility(View.INVISIBLE);
+                        Toast.makeText(ChickenAdd.this, "Uploaded Successfully", Toast.LENGTH_SHORT).show();
+                        imageView.setImageResource(R.drawable.ic_launcher_background);
+                    }
+                });
+            }
+        }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onProgress(@NonNull UploadTask.TaskSnapshot snapshot) {
+                progressBar.setVisibility(View.VISIBLE);
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                progressBar.setVisibility(View.INVISIBLE);
+                Toast.makeText(ChickenAdd.this, "Uploading Failed", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private String getFileExtension(Uri imageUri) {
+        ContentResolver cr = getContentResolver();
+        MimeTypeMap mime = MimeTypeMap.getSingleton();
+        return mime.getExtensionFromMimeType(cr.getType(imageUri));
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == 2 && resultCode == RESULT_OK && data != null) {
+
+            imageUri = data.getData();
+            imageView.setImageURI(imageUri);
+        }
+    }
+}

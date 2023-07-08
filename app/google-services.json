@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "454863132549",
+    "project_id": "aplamanus-41e35",
+    "storage_bucket": "aplamanus-41e35.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:454863132549:android:f4fe030a3e5dab3f9316ec",
+        "android_client_info": {
+          "package_name": "com.saurabhjadhavcse.aplamanus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "454863132549-2q7ved99ko9b34mtcfbbkm92cs0h1tpp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIOTTdJ-f9TuSHi5u04hlO1FRux9TJzo4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "454863132549-2q7ved99ko9b34mtcfbbkm92cs0h1tpp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

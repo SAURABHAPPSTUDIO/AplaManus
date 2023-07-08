@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AplaManus"
+        tools:targetApi="31">
+
+        <activity
+            android:name="com.saurabhjadhavcse.aplamanus.Users.Customer.Profile"
+            android:exported="false" />
+        <activity
+            android:name="com.saurabhjadhavcse.aplamanus.Users.Admin.Chicken.SeeChicken"
+            android:exported="false" />
+        <activity
+            android:name="com.saurabhjadhavcse.aplamanus.Users.Admin.Chicken.ChickenDashboard"
+            android:exported="false" />
+        <activity
+            android:name="com.saurabhjadhavcse.aplamanus.Users.Admin.Mutton.SeeMutton"
+            android:exported="false" />
+        <activity
+            android:name="com.saurabhjadhavcse.aplamanus.Users.Admin.Mutton.MuttonDasboard"
+            android:exported="false" />
+        <activity
+            android:name="com.saurabhjadhavcse.aplamanus.Users.Admin.Fish.SeeFish"
+            android:exported="false" />
+        <activity
+            android:name="com.saurabhjadhavcse.aplamanus.Users.Admin.Fish.FishDashboard"
+            android:exported="false" />
+        <activity
+            android:name="com.saurabhjadhavcse.aplamanus.Users.Customer.Cart.TrackOrders"
+            android:exported="false" />
+        <activity
+            android:name="com.saurabhjadhavcse.aplamanus.Users.Admin.Orders.TotalOrders"
+            android:exported="false" />
+        <activity
+            android:name="com.saurabhjadhavcse.aplamanus.Users.Admin.Orders.SeeOrders"
+            android:exported="false" />
+        <activity
+            android:name="com.saurabhjadhavcse.aplamanus.Users.Customer.Mutton.MuttonSee"
+            android:exported="false" />
+        <activity
+            android:name="com.saurabhjadhavcse.aplamanus.Users.Customer.Chicken.ChickenSee"
+            android:exported="false" />
+        <activity
+            android:name="com.saurabhjadhavcse.aplamanus.Users.Customer.Cart.OrderCompleted"
+            android:exported="false" />
+        <activity
+            android:name="com.saurabhjadhavcse.aplamanus.Users.Customer.Cart.GetAddress"
+            android:exported="false" />
+        <activity
+            android:name="com.saurabhjadhavcse.aplamanus.Users.Customer.Cart.CheckOut"
+            android:exported="false" />
+        <activity
+            android:name="com.saurabhjadhavcse.aplamanus.Users.Customer.Cart.MyCart"
+            android:exported="false" />
+        <activity
+            android:name="com.saurabhjadhavcse.aplamanus.Users.Customer.Fish.FishSee"
+            android:exported="false" />
+        <activity
+            android:name="com.saurabhjadhavcse.aplamanus.Users.Admin.Mutton.MuttonAdd"
+            android:exported="false" />
+        <activity
+            android:name="com.saurabhjadhavcse.aplamanus.Users.Admin.Chicken.ChickenAdd"
+            android:exported="false" />
+        <activity
+            android:name="com.saurabhjadhavcse.aplamanus.Users.Admin.Fish.FishAdd"
+            android:exported="false" />
+        <activity
+            android:name="com.saurabhjadhavcse.aplamanus.Users.Admin.AddItemDashboard"
+            android:exported="false" />
+        <activity
+            android:name="com.saurabhjadhavcse.aplamanus.Users.Customer.CustomerDashboard"
+            android:exported="false" />
+        <activity
+            android:name="com.saurabhjadhavcse.aplamanus.Users.Admin.AdminDashboard"
+            android:exported="false" />
+        <activity
+            android:name="com.saurabhjadhavcse.aplamanus.Authentication.Register"
+            android:exported="false" />
+        <activity
+            android:name="com.saurabhjadhavcse.aplamanus.Authentication.ForgotPassword"
+            android:exported="false" />
+        <activity
+            android:name="com.saurabhjadhavcse.aplamanus.Authentication.Login"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
+        <service
+            android:name=".Users.Customer.Notification.PushNotificationService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-3297669548528599~3806996723" />
+
+    </application>
+
+</manifest>
