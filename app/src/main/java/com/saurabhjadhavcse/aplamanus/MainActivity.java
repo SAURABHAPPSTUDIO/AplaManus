@@ -15,7 +15,6 @@ import android.widget.TextView;
 
 import com.saurabhjadhavcse.aplamanus.Authentication.Login;
 
-
 public class MainActivity extends AppCompatActivity {
 
     private static final int SPLASH_SCREEN = 3000;

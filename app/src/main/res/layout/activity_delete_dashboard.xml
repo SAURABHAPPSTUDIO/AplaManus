@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@color/white"
+    tools:context=".Users.Admin.Delete.DeleteDashboard">
+
+    <Button
+        android:id="@+id/deleteAllFishItems"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Delete All Fish Items"
+        style="@style/delete"
+        android:layout_marginBottom="20dp"
+        android:textColor="@color/white"
+        android:padding="12dp"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/deleteAllChickenItems"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Delete All Chicken Items"
+        android:layout_marginBottom="20dp"
+        android:layout_below="@id/deleteAllFishItems"
+        style="@style/delete"
+        android:textColor="@color/white"
+        android:padding="12dp"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/deleteAllMuttonItems"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="20dp"
+        android:layout_height="wrap_content"
+        android:text="Delete All Mutton Items"
+        android:layout_below="@id/deleteAllChickenItems"
+        style="@style/delete"
+        android:textColor="@color/white"
+        android:padding="12dp"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/deleteAllVegetableItems"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Delete All Vegetable Items"
+        android:layout_below="@id/deleteAllMuttonItems"
+        style="@style/delete"
+        android:textColor="@color/white"
+        android:padding="12dp"
+        android:textSize="16sp" />
+
+</RelativeLayout>

@@ -2,6 +2,8 @@ package com.saurabhjadhavcse.aplamanus.Users.Customer.Cart;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -30,6 +32,9 @@ public class MyCart extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_cart);
+
+        ImageView imageViewNoData = findViewById(R.id.imageViewNoData);
+
 
         recyclerView = findViewById(R.id.recyclerViewOrders);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -62,6 +67,13 @@ public class MyCart extends AppCompatActivity {
                 }
                 adapter.notifyDataSetChanged();
                 progressDialog.dismiss();
+
+                if (cartItemList.isEmpty()) {
+                    imageViewNoData.setVisibility(View.VISIBLE);
+                } else {
+                    imageViewNoData.setVisibility(View.GONE);
+                }
+
             }
 
             @Override

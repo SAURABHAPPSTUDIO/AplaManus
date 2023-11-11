@@ -4,13 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context="com.saurabhjadhav.aplamanus.Users.Customer.CustomerDashboard">
+    tools:context=".Users.Customer.CustomerDashboard">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_above="@id/adView">
+        android:layout_above="@id/adView"
+        android:layout_alignParentTop="true">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -82,6 +82,7 @@
                     android:textStyle="bold" />
 
                 <HorizontalScrollView
+                    android:id="@+id/scrollView1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
@@ -89,10 +90,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginStart="24dp"
+                        android:layout_marginStart="81dp"
                         android:layout_marginEnd="15dp"
                         android:alignmentMode="alignMargins"
-                        android:columnCount="3"
+                        android:columnCount="4"
                         android:columnOrderPreserved="false"
                         android:rowCount="3">
 
@@ -132,6 +133,7 @@
                             </LinearLayout>
 
                         </androidx.cardview.widget.CardView>
+
 
                         <androidx.cardview.widget.CardView
                             android:layout_width="wrap_content"
@@ -198,6 +200,43 @@
                                     android:layout_marginTop="12dp"
                                     android:fontFamily="@font/gabriela"
                                     android:text="Mutton"
+                                    android:textColor="@color/black"
+                                    android:textSize="20sp" />
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_rowWeight="1"
+                            android:layout_columnWeight="0"
+                            android:layout_margin="10dp"
+                            app:cardCornerRadius="12dp"
+                            app:cardElevation="20dp">
+
+                            <LinearLayout
+                                android:id="@+id/SeeVeggies"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/white"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:padding="16dp">
+
+                                <ImageView
+                                    android:layout_width="70dp"
+                                    android:layout_height="70dp"
+                                    android:src="@drawable/vegetable" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="12dp"
+                                    android:fontFamily="@font/gabriela"
+                                    android:text="Veggies"
                                     android:textColor="@color/black"
                                     android:textSize="20sp" />
 

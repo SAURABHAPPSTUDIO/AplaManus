@@ -1,12 +1,13 @@
 package com.saurabhjadhavcse.aplamanus.Users.Admin.Fish;
-
 import android.content.ContentResolver;
 import android.content.Intent;
+
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.webkit.MimeTypeMap;
 import android.widget.Button;
+
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -14,8 +15,8 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 
+import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
@@ -28,21 +29,13 @@ import com.saurabhjadhavcse.aplamanus.R;
 import com.saurabhjadhavcse.aplamanus.Users.Admin.Models.FishModel;
 
 public class FishAdd extends AppCompatActivity {
-
     private Button uploadBtn;
-
     private ImageView imageView;
-
-    EditText itemNameEditTxt, itemPriceEditTxt, hotelLocationEditTxt;
-
+    EditText itemNameEditTxt, itemPriceEditTxt;
     String itemNameEditTxtToString, itemPriceEditTxtToString;
-
     private ProgressBar progressBar;
-
     private final DatabaseReference root = FirebaseDatabase.getInstance().getReference("Fish");
-
     private final StorageReference reference = FirebaseStorage.getInstance().getReference();
-
     Uri imageUri;
 
     @Override

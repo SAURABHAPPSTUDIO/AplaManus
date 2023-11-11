@@ -7,7 +7,7 @@
     android:background="@color/white"
     android:orientation="vertical"
     android:padding="16dp"
-    tools:context="com.saurabhjadhav.aplamanus.Users.Customer.Profile">
+    tools:context=".Users.Customer.Profile">
 
     <TextView
         android:layout_width="wrap_content"

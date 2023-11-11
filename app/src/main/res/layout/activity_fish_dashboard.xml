@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context="com.saurabhjadhav.aplamanus.Users.Admin.AddItemDashboard">
+    tools:context=".Users.Admin.AddItemDashboard">
 
     <LinearLayout
         android:id="@+id/SDashLinear1"

@@ -12,84 +12,107 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AplaManus"
         tools:targetApi="31">
-
         <activity
-            android:name="com.saurabhjadhavcse.aplamanus.Users.Customer.Profile"
+            android:name=".Users.Customer.Payment.ChoosePaymentMethodActivity"
             android:exported="false" />
         <activity
-            android:name="com.saurabhjadhavcse.aplamanus.Users.Admin.Chicken.SeeChicken"
+            android:name=".Users.Admin.Delete.DeleteDashboard"
             android:exported="false" />
         <activity
-            android:name="com.saurabhjadhavcse.aplamanus.Users.Admin.Chicken.ChickenDashboard"
+            android:name=".Users.Admin.Vegetable.SeeVegetable"
             android:exported="false" />
         <activity
-            android:name="com.saurabhjadhavcse.aplamanus.Users.Admin.Mutton.SeeMutton"
+            android:name=".Users.Admin.Vegetable.VegetableDashboard"
             android:exported="false" />
         <activity
-            android:name="com.saurabhjadhavcse.aplamanus.Users.Admin.Mutton.MuttonDasboard"
+            android:name=".Users.Admin.Vegetable.VegetableAdd"
             android:exported="false" />
         <activity
-            android:name="com.saurabhjadhavcse.aplamanus.Users.Admin.Fish.SeeFish"
+            android:name=".Users.Customer.Vegetable.VegetableSee"
             android:exported="false" />
         <activity
-            android:name="com.saurabhjadhavcse.aplamanus.Users.Admin.Fish.FishDashboard"
+            android:name=".Users.Customer.Meat.MeatDashboard"
             android:exported="false" />
         <activity
-            android:name="com.saurabhjadhavcse.aplamanus.Users.Customer.Cart.TrackOrders"
+            android:name=".Users.Customer.AboutUs"
             android:exported="false" />
         <activity
-            android:name="com.saurabhjadhavcse.aplamanus.Users.Admin.Orders.TotalOrders"
+            android:name=".Users.Customer.Profile"
             android:exported="false" />
         <activity
-            android:name="com.saurabhjadhavcse.aplamanus.Users.Admin.Orders.SeeOrders"
+            android:name=".Users.Admin.Chicken.SeeChicken"
             android:exported="false" />
         <activity
-            android:name="com.saurabhjadhavcse.aplamanus.Users.Customer.Mutton.MuttonSee"
+            android:name=".Users.Admin.Chicken.ChickenDashboard"
             android:exported="false" />
         <activity
-            android:name="com.saurabhjadhavcse.aplamanus.Users.Customer.Chicken.ChickenSee"
+            android:name=".Users.Admin.Mutton.SeeMutton"
             android:exported="false" />
         <activity
-            android:name="com.saurabhjadhavcse.aplamanus.Users.Customer.Cart.OrderCompleted"
+            android:name=".Users.Admin.Mutton.MuttonDasboard"
             android:exported="false" />
         <activity
-            android:name="com.saurabhjadhavcse.aplamanus.Users.Customer.Cart.GetAddress"
+            android:name=".Users.Admin.Fish.SeeFish"
             android:exported="false" />
         <activity
-            android:name="com.saurabhjadhavcse.aplamanus.Users.Customer.Cart.CheckOut"
+            android:name=".Users.Admin.Fish.FishDashboard"
             android:exported="false" />
         <activity
-            android:name="com.saurabhjadhavcse.aplamanus.Users.Customer.Cart.MyCart"
+            android:name=".Users.Customer.Cart.TrackOrders"
             android:exported="false" />
         <activity
-            android:name="com.saurabhjadhavcse.aplamanus.Users.Customer.Fish.FishSee"
+            android:name=".Users.Admin.Orders.TotalOrders"
             android:exported="false" />
         <activity
-            android:name="com.saurabhjadhavcse.aplamanus.Users.Admin.Mutton.MuttonAdd"
+            android:name=".Users.Admin.Orders.SeeOrders"
             android:exported="false" />
         <activity
-            android:name="com.saurabhjadhavcse.aplamanus.Users.Admin.Chicken.ChickenAdd"
+            android:name=".Users.Customer.Meat.Mutton.MuttonSee"
             android:exported="false" />
         <activity
-            android:name="com.saurabhjadhavcse.aplamanus.Users.Admin.Fish.FishAdd"
+            android:name=".Users.Customer.Meat.Chicken.ChickenSee"
             android:exported="false" />
         <activity
-            android:name="com.saurabhjadhavcse.aplamanus.Users.Admin.AddItemDashboard"
+            android:name=".Users.Customer.Cart.OrderCompleted"
             android:exported="false" />
         <activity
-            android:name="com.saurabhjadhavcse.aplamanus.Users.Customer.CustomerDashboard"
+            android:name=".Users.Customer.Cart.GetAddress"
             android:exported="false" />
         <activity
-            android:name="com.saurabhjadhavcse.aplamanus.Users.Admin.AdminDashboard"
+            android:name=".Users.Customer.Cart.CheckOut"
             android:exported="false" />
         <activity
-            android:name="com.saurabhjadhavcse.aplamanus.Authentication.Register"
+            android:name=".Users.Customer.Cart.MyCart"
             android:exported="false" />
         <activity
-            android:name="com.saurabhjadhavcse.aplamanus.Authentication.ForgotPassword"
+            android:name=".Users.Customer.Fish.FishSee"
             android:exported="false" />
         <activity
-            android:name="com.saurabhjadhavcse.aplamanus.Authentication.Login"
+            android:name=".Users.Admin.Mutton.MuttonAdd"
+            android:exported="false" />
+        <activity
+            android:name=".Users.Admin.Chicken.ChickenAdd"
+            android:exported="false" />
+        <activity
+            android:name=".Users.Admin.Fish.FishAdd"
+            android:exported="false" />
+        <activity
+            android:name=".Users.Admin.AddItemDashboard"
+            android:exported="false" />
+        <activity
+            android:name=".Users.Customer.CustomerDashboard"
+            android:exported="false" />
+        <activity
+            android:name=".Users.Admin.AdminDashboard"
+            android:exported="false" />
+        <activity
+            android:name=".Authentication.Register"
+            android:exported="false" />
+        <activity
+            android:name=".Authentication.ForgotPassword"
+            android:exported="false" />
+        <activity
+            android:name=".Authentication.Login"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
@@ -116,7 +139,6 @@
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-3297669548528599~3806996723" />
-
     </application>
 
 </manifest>

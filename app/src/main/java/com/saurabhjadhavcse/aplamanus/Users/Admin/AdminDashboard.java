@@ -20,11 +20,12 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.saurabhjadhavcse.aplamanus.R;
+import com.saurabhjadhavcse.aplamanus.Users.Admin.Delete.DeleteDashboard;
 import com.saurabhjadhavcse.aplamanus.Users.Admin.Orders.TotalOrders;
 
 public class AdminDashboard extends AppCompatActivity {
 
-    LinearLayout addItem, seeOrders;
+    LinearLayout addItem, seeOrders, deleteAll;
 
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference tokensRef = database.getReference("tokens");
@@ -39,6 +40,7 @@ public class AdminDashboard extends AppCompatActivity {
         addItem = findViewById(R.id.AddItems);
         seeOrders = findViewById(R.id.SeeOrders);
         mAdView = findViewById(R.id.adView2);
+        deleteAll = findViewById(R.id.DeleteAll);
 
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
@@ -127,6 +129,13 @@ public class AdminDashboard extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(AdminDashboard.this, TotalOrders.class));
+            }
+        });
+
+        deleteAll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(AdminDashboard.this, DeleteDashboard.class));
             }
         });
 
